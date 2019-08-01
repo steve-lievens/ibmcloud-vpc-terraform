@@ -4,7 +4,7 @@ provider "ibm" {
   generation = 1
 }
 
-locals {
+local {
   BASENAME = "nadine"
   ZONE     = "us-south-1"
 }
@@ -46,7 +46,7 @@ data ibm_is_ssh_key "ssh_key_id" {
 }
 
 data ibm_resource_group "group" {
-  name = "Default"
+  name = "ALL"
 }
 
 resource ibm_is_instance "vsi1" {
