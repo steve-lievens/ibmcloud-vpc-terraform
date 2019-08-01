@@ -4,7 +4,7 @@ provider "ibm" {
   generation = 1
 }
 
-local {
+locals {
   BASENAME = "nadine"
   ZONE     = "us-south-1"
 }
