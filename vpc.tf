@@ -5,8 +5,8 @@ provider "ibm" {
 }
 
 locals {
-  BASENAME = "nadine"
-  ZONE     = "us-south-1"
+  BASENAME = "steve-terraform"
+  ZONE     = "eu-de-1"
 }
 
 resource ibm_is_vpc "vpc" {
