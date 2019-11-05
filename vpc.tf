@@ -5,8 +5,13 @@ provider "ibm" {
 }
 
 locals {
+<<<<<<< HEAD
   BASENAME = "schematics" 
   ZONE     = "us-south-1"
+=======
+  BASENAME = "steve-terraform"
+  ZONE     = "eu-de-1"
+>>>>>>> origin/master
 }
 
 resource ibm_is_vpc "vpc" {
@@ -22,7 +27,11 @@ resource ibm_is_security_group "sg1" {
 resource "ibm_is_security_group_rule" "ingress_ssh_all" {
   group     = "${ibm_is_security_group.sg1.id}"
   direction = "inbound"
+<<<<<<< HEAD
   remote    = "0.0.0.0/0"                       
+=======
+  remote    = "0.0.0.0/0"
+>>>>>>> origin/master
 
   tcp = {
     port_min = 22
