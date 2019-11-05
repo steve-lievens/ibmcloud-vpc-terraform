@@ -5,7 +5,7 @@ provider "ibm" {
 }
 
 locals {
-  BASENAME = "nadine"
+  BASENAME = "schematics" 
   ZONE     = "us-south-1"
 }
 
@@ -21,8 +21,8 @@ resource ibm_is_security_group "sg1" {
 # allow all incoming network traffic on port 22
 resource "ibm_is_security_group_rule" "ingress_ssh_all" {
   group     = "${ibm_is_security_group.sg1.id}"
-  direction = "ingress"
-  remote    = "0.0.0.0/0"
+  direction = "inbound"
+  remote    = "0.0.0.0/0"                       
 
   tcp = {
     port_min = 22
@@ -46,7 +46,7 @@ data ibm_is_ssh_key "ssh_key_id" {
 }
 
 data ibm_resource_group "group" {
-  name = "ALL"
+  name = "default"
 }
 
 resource ibm_is_instance "vsi1" {
