@@ -6,7 +6,7 @@ provider "ibm" {
 
 locals {
   BASENAME = "fs2020" 
-  ZONE     = "eu-de-1"
+  ZONE     = "us-south-1"
 }
 
 resource ibm_is_vpc "vpc" {
