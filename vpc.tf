@@ -5,8 +5,8 @@ provider "ibm" {
 }
 
 locals {
-  BASENAME = "schematics" 
-  ZONE     = "us-south-1"
+  BASENAME = "fs2020" 
+  ZONE     = "eu-de-1"
 }
 
 resource ibm_is_vpc "vpc" {
@@ -46,7 +46,7 @@ data ibm_is_ssh_key "ssh_key_id" {
 }
 
 data ibm_resource_group "group" {
-  name = "default"
+  name = "ALL"
 }
 
 resource ibm_is_instance "vsi1" {
