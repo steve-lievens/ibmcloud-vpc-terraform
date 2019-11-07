@@ -1,13 +1,15 @@
 variable "ssh_key" {}
+variable "region" {}
+variable "base_name" {}
 
 provider "ibm" {
   generation = 1
-  region = eu-de
+  region = "${var.region}"
 }
 
 locals {
-  BASENAME = "fs2020" 
-  ZONE     = "eu-de-1"
+  BASENAME = "${var.base_name}" 
+  ZONE     = "${var.region}-1"
 }
 
 resource ibm_is_vpc "vpc" {
