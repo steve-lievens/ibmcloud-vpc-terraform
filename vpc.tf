@@ -2,11 +2,12 @@ variable "ssh_key" {}
 
 provider "ibm" {
   generation = 1
+  region = eu-de
 }
 
 locals {
   BASENAME = "fs2020" 
-  ZONE     = "us-south-1"
+  ZONE     = "eu-de-1"
 }
 
 resource ibm_is_vpc "vpc" {
